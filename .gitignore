@@ -4,28 +4,35 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
-venv/
-env/
-.venv/
 *.egg-info/
 dist/
 build/
-.pytest_cache/
+.venv/
+venv/
+env/
 
-# Environment — never commit real secrets
-backend/.env
+# Environment variables (sensitive)
+.env
+!.env.example
 
 # Node
 node_modules/
-frontend/build/
-frontend/.env
 npm-debug.log*
+
+# React build
+frontend/build/
+
+# IDE
+.vscode/
+.idea/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# IDE
-.vscode/
-.idea/
-*.swp
+# Logs
+*.log
+backend/backend.log
+
+# Flask migrations
+migrations/

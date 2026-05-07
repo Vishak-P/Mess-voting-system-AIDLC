@@ -41,7 +41,7 @@ const LoginPage = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="text-5xl mb-3">🍽️</div>
+          <div className="text-5xl mb-3"></div>
           <h1 className="text-2xl font-bold text-gray-900">Mess Voting System</h1>
           <p className="text-gray-500 mt-1">Sign in to vote for your meals</p>
         </div>
@@ -83,12 +83,7 @@ const LoginPage = () => {
             </button>
           </form>
 
-          {/* Demo credentials */}
-          <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
-            <p className="text-xs font-medium text-amber-800 mb-1">Demo Credentials</p>
-            <p className="text-xs text-amber-700">Admin: admin@mess.com / admin123</p>
-            <p className="text-xs text-amber-700">Student: aarav@test.com / student123</p>
-          </div>
+         
 
           <p className="text-center text-sm text-gray-600 mt-4">
             Don't have an account?{" "}

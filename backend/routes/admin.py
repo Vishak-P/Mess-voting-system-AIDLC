@@ -36,8 +36,8 @@ def create_menu():
         return jsonify({"error": "Invalid date format. Use YYYY-MM-DD"}), 400
 
     try:
-        open_time = datetime.fromisoformat(data["open_time"])
-        deadline = datetime.fromisoformat(data["deadline"])
+        open_time = datetime.fromisoformat(data["open_time"].replace("Z", "+00:00")).replace(tzinfo=None)
+        deadline = datetime.fromisoformat(data["deadline"].replace("Z", "+00:00")).replace(tzinfo=None)
     except ValueError:
         return jsonify({"error": "Invalid datetime format. Use ISO 8601"}), 400
 
@@ -87,13 +87,13 @@ def update_menu(menu_id):
 
     if "open_time" in data:
         try:
-            updates["open_time"] = datetime.fromisoformat(data["open_time"])
+            updates["open_time"] = datetime.fromisoformat(data["open_time"].replace("Z", "+00:00")).replace(tzinfo=None)
         except ValueError:
             return jsonify({"error": "Invalid open_time format"}), 400
 
     if "deadline" in data:
         try:
-            updates["deadline"] = datetime.fromisoformat(data["deadline"])
+            updates["deadline"] = datetime.fromisoformat(data["deadline"].replace("Z", "+00:00")).replace(tzinfo=None)
         except ValueError:
             return jsonify({"error": "Invalid deadline format"}), 400
 

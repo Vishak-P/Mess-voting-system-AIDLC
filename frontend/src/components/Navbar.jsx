@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/dashboard" className="flex items-center gap-2">
-            <span className="text-2xl">🍽️</span>
+            <span className="text-2xl"></span>
             <span className="font-bold text-gray-900 text-lg hidden sm:block">
               Mess Voting
             </span>

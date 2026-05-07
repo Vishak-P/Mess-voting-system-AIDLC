@@ -39,6 +39,7 @@ def register():
     email = data["email"].strip().lower()[:150]
     password = data["password"]
     role = data.get("role", "student")
+
     if role not in ("admin", "student"):
         role = "student"
     if len(password) < 8:
@@ -56,6 +57,7 @@ def register():
     result = db.users.insert_one(user)
     user["_id"] = result.inserted_id
 
+    logger.info("New user registered: email=%s role=%s", email, role)
     token = create_access_token(identity=str(result.inserted_id), additional_claims={"role": role})
     return jsonify({"message": "Registration successful", "token": token, "user": user_to_dict(user)}), 201
 

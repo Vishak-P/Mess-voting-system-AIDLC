@@ -44,13 +44,13 @@ def create_app(config=None):
         force_https=False,
     )
 
-    from routes.auth import auth_bp
+    from routes.auth import auth_bp, login as login_view
     from routes.menu import menu_bp
     from routes.admin import admin_bp
     from routes.voting import voting_bp
     from routes.feedback import feedback_bp
     from routes.dashboard import dashboard_bp
-    from routes.auth import login as login_view
+
     limiter.limit("10 per minute")(login_view)
 
     app.register_blueprint(auth_bp, url_prefix="/api")

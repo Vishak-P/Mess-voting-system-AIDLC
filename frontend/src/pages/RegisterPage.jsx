@@ -33,7 +33,7 @@ const RegisterPage = () => {
 
     const result = await register(form.name, form.email, form.password, role);
     if (result.success) {
-      toast.success("Account created! Welcome 🎉");
+      toast.success("Account created! Welcome ");
       navigate(result.user.role === "admin" ? "/admin" : "/dashboard");
     } else {
       toast.error(result.error);
@@ -59,7 +59,7 @@ const RegisterPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="text-5xl mb-3">🍽️</div>
+          <div className="text-5xl mb-3"></div>
           <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
           <p className="text-gray-500 mt-1">Join the mess voting system</p>
         </div>
@@ -78,7 +78,7 @@ const RegisterPage = () => {
                   : "text-gray-500 hover:text-gray-700"
               }`}
             >
-              🎓 Register as Student
+               Register as Student
             </button>
             <button
               type="button"
@@ -89,7 +89,7 @@ const RegisterPage = () => {
                   : "text-gray-500 hover:text-gray-700"
               }`}
             >
-              🛡️ Register as Admin
+               Register as Admin
             </button>
           </div>
 
